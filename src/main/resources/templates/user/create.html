@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-title">
+        <h1> Batti-Papo </h1>
+    </div>
+    <div class="header-menu">
+        <ul>
+            <li><a class="link" href="index.html"> <i class="fa fa-home"></i> Home</a></li>
+            <li><a class="link" href="explore.html"> <i class="fa fa-search"></i> Explorar </a></li>
+            <li><a class="link" href="user/profile.html"> <i class="fa fa-user"></i> Meu Perfil </a></li>
+        </ul>
+    </div>
+</header>
+<br>
+<form>
+    <input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg"><img src="../img/addphoto.png" height="200px" width="200px">
+<label for=""> Nome de Usuário </label>
+<input type="text" placeholder="Usuario123" required>
+<label for=""> Nome </label>
+<input type="text" placeholder="Novo" required>
+<label for=""> Sobrenome </label>
+<input type="text" placeholder="Usuário" required>
+<label for=""> Data de Nascimento </label>
+<input type="datetime" placeholder="01/01/2022" required>
+<label for=""> Email </label>
+<input type="email" placeholder="novousuario@email.com" required>
+<label for=""> Senha </label>
+<input type="password" placeholder="••••" required>
+<br>
+<br>                        
+<button type="submit" class="btn">Cadastrar</button>
+</form>
+</body>
+</html>

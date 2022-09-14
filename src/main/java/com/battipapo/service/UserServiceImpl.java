@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        User use = userRepository.findById(id);
+        User use = userRepository.findById(id).get();
         return use != null ? use : new User();
     }
 
@@ -32,12 +32,13 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-//    @Override
-//    public User save(User user) {
-//        try {
-//            userRepository.save(user);
-//        } catch (Exception e) {
-//            throw e;
-//        }
-//    }
+    @Override
+    public User save(User user) {
+        try {
+            userRepository.save(user);
+        } catch (Exception e) {
+            throw e;
+        }
+        return user;
+    }
 }

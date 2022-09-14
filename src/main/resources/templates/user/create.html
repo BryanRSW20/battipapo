@@ -21,25 +21,19 @@
         </ul>
     </div>
 </header>
-<br>
-<form>
-    <input type="file"
-       id="avatar" name="avatar"
-       accept="image/png, image/jpeg"><img src="../img/addphoto.png" height="200px" width="200px">
+<form th:action="@{/user/create}" method="POST" th:object="${user}">
+    <img src="../img/addphoto.png" height="200px" width="200px">
+    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
 <label for=""> Nome de Usuário </label>
-<input type="text" placeholder="Usuario123" required>
+<input th:field="*{username}" type="text" placeholder="Usuario123" required>
 <label for=""> Nome </label>
-<input type="text" placeholder="Novo" required>
+<input  th:field="*{nome}" type="text" placeholder="Novo" required>
 <label for=""> Sobrenome </label>
-<input type="text" placeholder="Usuário" required>
-<label for=""> Data de Nascimento </label>
-<input type="datetime" placeholder="01/01/2022" required>
+<input  th:field="*{Sobrenome}" type="text" placeholder="Usuário" required>
 <label for=""> Email </label>
-<input type="email" placeholder="novousuario@email.com" required>
+<input  th:field="*{email}" type="email" placeholder="novousuario@email.com" required>
 <label for=""> Senha </label>
-<input type="password" placeholder="••••" required>
-<br>
-<br>                        
+<input  th:field="*{senha}" type="password" placeholder="••••••••••" required>                        
 <button type="submit" class="btn">Cadastrar</button>
 </form>
 </body>

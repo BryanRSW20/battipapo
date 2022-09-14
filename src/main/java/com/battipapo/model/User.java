@@ -10,7 +10,7 @@ public class User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private long Id;
 
     @Column(name = "username")
     @Size(max = 24)
@@ -26,10 +26,6 @@ public class User {
     @Size(max = 40)
     @NotNull
     private String sobrenome;
-
-    @Column(name = "data_nasc")
-    @NotNull
-    private Date data_nasc;
 
     @Column(name = "email")
     @NotNull
@@ -73,14 +69,6 @@ public class User {
         this.sobrenome = sobrenome;
     }
 
-    public Date getData_nasc() {
-        return data_nasc;
-    }
-
-    public void setData_nasc(Date data_nasc) {
-        this.data_nasc = data_nasc;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -104,7 +92,6 @@ public class User {
                 ", username='" + username + '\'' +
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
-                ", data_nasc=" + data_nasc +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
                 '}';

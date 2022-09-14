@@ -8,5 +8,6 @@ public interface UserService {
     public User findByNome(String nome);
     public User findByNomeAndSobrenome(String nome, String sobrenome);
 
-//    public User save(User user);
+
+  public User save(User user);
 }

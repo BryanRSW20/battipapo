@@ -20,18 +20,18 @@ public class UserController {
         return "user/create";
     }
 
-//    @PostMapping("/user/save")
-//    public String save(User user, Model model){
-//        try {
-//            userService.save(user);
-//            model.addAttribute("user", user);
-//            model.addAttribute("isSaved", true);
-//            return "user/create";
-//        } catch(Exception e){
-//            model.addAttribute("user", user);
-//            model.addAttribute("isError", true);
-//            model.addAttribute("error", e.getMessage());
-//            return "user/create";
-//        }
-//    }
+    @PostMapping("/user/save")
+    public String save(User user, Model model){
+        try {
+            userService.save(user);
+            model.addAttribute("user", user);
+            model.addAttribute("isSaved", true);
+            return "user/create";
+        } catch(Exception e){
+            model.addAttribute("user", user);
+            model.addAttribute("isError", true);
+            model.addAttribute("error", e.getMessage());
+            return "user/create";
+        }
+    }
 }

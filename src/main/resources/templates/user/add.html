@@ -15,17 +15,17 @@
     </div>
     <div class="header-menu">
         <ul>
-            <li><a class="link" href="index.html"> <i class="fa fa-home"></i> Home</a></li>
+            <li><a class="link" href="./"> <i class="fa fa-home"></i> Home</a></li>
             <li><a class="link" href="explore.html"> <i class="fa fa-search"></i> Explorar </a></li>
             <li><a class="link" href="user/profile.html"> <i class="fa fa-user"></i> Meu Perfil </a></li>
         </ul>
     </div>
 </header>
-<div th:if="${isSaved}" class="alerta-sucesso">
+<div class="alerta-sucesso">
     <h4> Operação Realizada com sucesso! </h4> <i class="fa fa-check-square"></i> 
   </div>
 
-  <div th:if="${isError}" class="alerta-falha">
+  <div class="alerta-falha">
     <h4> A Operação Falhou... </h4>
     <label th:text="#{errorMsg}"></label>
   </div>

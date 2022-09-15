@@ -93,4 +93,50 @@ form label {
   color: #004fff;
 }
 
+main{
+  display: flex;
+  justify-content: center;
+  place-items: center;
+}
+
+.feed{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1rem;
+  color: #DCE2C8;
+}
+
+.feed span{
+  font-size: 1.2rem;
+}
+
+.post-main{
+  width: 560px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 0.7rem;
+  border-radius: .8rem;
+  box-shadow: 0 0 .2rem .1rem rgba(0, 0, 0, .350);
+}
+
+.user{
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5rem; 
+}
+
+.user-handle{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.user-name{
+  font-size: .7rem;
+  font-weight: 400;
+}
+
+.alerta-sucesso{
+  background-color: #004fff;
+}
 /*# sourceMappingURL=style.css.map */

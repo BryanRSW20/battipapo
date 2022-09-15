@@ -14,10 +14,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/user/create")
-    public String create(Model model){
+    @GetMapping("/user/add")
+    public String add(Model model){
         model.addAttribute("user", new User());
-        return "user/create";
+        return "user/add";
     }
 
     @PostMapping("/user/save")
@@ -26,12 +26,12 @@ public class UserController {
             userService.save(user);
             model.addAttribute("user", user);
             model.addAttribute("isSaved", true);
-            return "user/create";
+            return "user/add";
         } catch(Exception e){
             model.addAttribute("user", user);
             model.addAttribute("isError", true);
             model.addAttribute("error", e.getMessage());
-            return "user/create";
+            return "user/add";
         }
     }
 }

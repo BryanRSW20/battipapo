@@ -21,15 +21,23 @@
         </ul>
     </div>
 </header>
-<form th:action="@{/user/create}" method="POST" th:object="${user}">
+<div th:if="${isSaved}" class="alerta-sucesso">
+    <h4> Operação Realizada com sucesso! </h4> <i class="fa fa-check-square"></i> 
+  </div>
+
+  <div th:if="${isError}" class="alerta-falha">
+    <h4> A Operação Falhou... </h4>
+    <label th:text="#{errorMsg}"></label>
+  </div>
+<form th:action="@{/user/save}" method="POST" th:object="${user}">
     <img src="../img/addphoto.png" height="200px" width="200px">
     <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
 <label for=""> Nome de Usuário </label>
 <input th:field="*{username}" type="text" placeholder="Usuario123" required>
 <label for=""> Nome </label>
 <input  th:field="*{nome}" type="text" placeholder="Novo" required>
-<label for=""> Sobrenome </label>
-<input  th:field="*{Sobrenome}" type="text" placeholder="Usuário" required>
+<label for=""> sobrenome </label>
+<input  th:field="*{sobrenome}" type="text" placeholder="Usuário" required>
 <label for=""> Email </label>
 <input  th:field="*{email}" type="email" placeholder="novousuario@email.com" required>
 <label for=""> Senha </label>

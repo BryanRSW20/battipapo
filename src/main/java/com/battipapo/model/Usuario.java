@@ -3,17 +3,15 @@ package com.battipapo.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
-@Entity(name = "user")
-public class User {
+@Entity(name = "usuario")
+public class Usuario {
     @Id
-    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long Id;
 
     @Column(name = "username")
-    @Size(max = 24)
+    @Size(max = 16)
     @NotNull
     private String username;
 
@@ -23,9 +21,13 @@ public class User {
     private String nome;
 
     @Column(name = "sobrenome")
-    @Size(max = 40)
+    @Size(max = 60)
     @NotNull
     private String sobrenome;
+
+    @Column(name = "idade")
+    @NotNull
+    private Integer idade;
 
     @Column(name = "email")
     @NotNull
@@ -34,7 +36,6 @@ public class User {
 
     @Column(name = "senha")
     @NotNull
-    @Size(max = 24)
     private String senha;
 
     public Long getId() {
@@ -69,6 +70,14 @@ public class User {
         this.sobrenome = sobrenome;
     }
 
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -87,11 +96,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Usuario{" +
                 "Id=" + Id +
                 ", username='" + username + '\'' +
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +
+                ", idade=" + idade +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
                 '}';

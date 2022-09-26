@@ -21,27 +21,26 @@
         </ul>
     </div>
 </header>
-<div class="alerta-sucesso">
+<div th:if="${isSaved}" class="alerta-sucesso">
     <h4> Operação Realizada com sucesso! </h4> <i class="fa fa-check-square"></i> 
   </div>
 
-  <div class="alerta-falha">
+  <div th:if="${isError}" class="alerta-falha">
     <h4> A Operação Falhou... </h4>
     <label th:text="#{errorMsg}"></label>
   </div>
-<form th:action="@{/user/save}" method="POST" th:object="${user}">
+<form class="user-add" th:action="@{/usuario/save}" method="POST" th:object="${usuario}">
     <img src="../img/addphoto.png" height="200px" width="200px">
-    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-<label for=""> Nome de Usuário </label>
-<input th:field="*{username}" type="text" placeholder="Usuario123" required>
-<label for=""> Nome </label>
-<input  th:field="*{nome}" type="text" placeholder="Novo" required>
-<label for=""> sobrenome </label>
-<input  th:field="*{sobrenome}" type="text" placeholder="Usuário" required>
-<label for=""> Email </label>
-<input  th:field="*{email}" type="email" placeholder="novousuario@email.com" required>
-<label for=""> Senha </label>
-<input  th:field="*{senha}" type="password" placeholder="••••••••••" required>                        
+<label for="iUN"> Nome de Usuário </label>
+<input id="iUN" th:field="*{username}" type="text" placeholder=" " required>
+<label for="iN"> Nome </label>
+<input id="iN" th:field="*{nome}" type="text" placeholder=" " required>
+<label for="iSN"> sobrenome </label>
+<input id="iSN" th:field="*{sobrenome}" type="text" placeholder=" " required>
+<label for="iE"> Email </label>
+<input  id="iE" th:field="*{email}" type="email" placeholder=" " required>
+<label for="iPW"> Senha </label>
+<input id="iPW" th:field="*{senha}" type="password" placeholder=" " required>                        
 <button type="submit" class="btn">Cadastrar</button>
 </form>
 </body>

@@ -97,6 +97,7 @@ main{
   display: flex;
   justify-content: center;
   place-items: center;
+  flex-direction: column;
 }
 
 .feed{
@@ -136,6 +137,22 @@ main{
   font-weight: 400;
 }
 
+.user-add{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: column;
+}
+
+.user-add input{
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: 1px solid rgb(75, 75, 75);
+  padding: .6rem;
+  border-radius: .2rem;
+}
+
 .alerta-sucesso{
   display: flex;
   background-color: #0051ff33;
@@ -161,8 +178,6 @@ main{
   }
 }
 
-
-
 .loading-ball{
   background: #3ABEFF;
   border-radius: 50%;
@@ -187,6 +202,13 @@ main{
   color: #DCE2C8;
 }
 
+.search-top{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: row;
+}
+
 @keyframes search-expand{
   0%{
     padding: 1rem 1rem;
@@ -198,12 +220,14 @@ main{
 }
 
 .search input{
+  color: #fff;
   background: #242424;
   border-radius: 3rem;
   border: none;
-  height: 4rem;
-  width: 30rem;
   outline: none;
+  height: 2.5rem;
+  width: 16rem;
+  text-align: center;
 }
 
 .link-error{
@@ -212,5 +236,27 @@ main{
   place-items: center;
   flex-direction: column;
   color: #DCE2C8;
+}
+
+.btn-search{
+  background: #242424;
+  padding: .8rem;
+  color: rgba(74, 75, 74, 0.664);
+  border: none;
+  border-radius: 50%;
+  margin-left: 2.5%;
+  transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.search-result{
+  margin-top: 2%;
+  width: 720px;
+  height: 360px;
+  background-color: #242424;
+  border-radius: 1.5rem;
+}
+
+.btn-search:hover{
+  color: #3ABEFF;
 }
 /*# sourceMappingURL=style.css.map */

@@ -16,27 +16,21 @@
             <ul>
                 <li><a class="link" href="/"> <i class="fa fa-home"></i> Home</a></li>
                 <li><a class="link" href="/search"> <i class="fa fa-search"></i> Explorar </a></li>
-                <li><a class="link" href="/usuario/add"> <i class="fa fa-user"></i> Meu Perfil </a></li>
+                <li><a class="link" href="user/profile.html"> <i class="fa fa-user"></i> Meu Perfil </a></li>
             </ul>
         </div>
+
+        
     </header>
     <main>
-        <div class="feed">
-            <span> Boa-tarde usuário, vamos batter &trade; um papo? </span>
+        
 
-            <p> Acesse o feed do Batti-Papo agora mesmo! </p>
-            <a href="/post/list"> Acessar </a>
-
-            <!-- <div class="post-main">
-                <div class="user"> 
-                    <p class="user-handle">@oPereira</p>
-                    <p class="user-name"> Asdrubal Pereira </p>     
-                </div>
-                <div class="post-content">
-                    <a href="usuario/add">Crik aki para cadastrá um buneco</a>
-                </div>
-            </div>
-        </div> -->
+            <form class="post-create" th:action="@{/post/save}" method="POST" th:object="${post}">
+            <label for="post-txt"> Escreva seu post </label>
+            <textarea class="post-inp" th:field="*{texto}" id="post-txt" required></textarea>
+            <button class="post-btn" type="submit"> Enviar <i class="fa fa-paper-plane"></i> </button>
+            <button onclick="window.location.href='./list'" class="post-btn-c"> Ah, deixa pra lá <i class="fa fa-ban"></i> </button>
+            </form>
     </main>
 </body>
 </html>

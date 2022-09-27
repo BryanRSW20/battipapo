@@ -15,4 +15,5 @@ public class IndexController {
     public String search(){
         return "search";
     }
+
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title> Home | Batti-Papo</title>
+    <title> Feed | Batti-Papo</title>
 </head>
 <body>
     <header class="header">
@@ -15,22 +15,27 @@
         <div class="header-menu">
             <ul>
                 <li><a class="link" href="/"> <i class="fa fa-home"></i> Home</a></li>
-                <li><a class="link" href="explore.html"> <i class="fa fa-search"></i> Explorar </a></li>
+                <li><a class="link" href="/search"> <i class="fa fa-search"></i> Explorar </a></li>
                 <li><a class="link" href="user/profile.html"> <i class="fa fa-user"></i> Meu Perfil </a></li>
             </ul>
         </div>
     </header>
     <main>
-    <div class="link-error">
-           <h1> Algo deu errado... </h1>
-            <i class="fa fa-exclamation-triangle"></i>
-            <p>"O erro não é meu, é de vocês!"</p>
-            <p>- Paulo Battistella</p>
-            <p> Verifique se a URL existe, ou se você está conectado a internet </p>
-            <div class="loading-ball"></div>
-            <p> Olhe para a bolinha, e talvez o problema vá embora </p>
-            <p> Ou recarregue a página utilizando F5 </p>
+        <div class="feed">
+            <div class="post-create">
+                <p> Pensou em algo? </p>
+                <a href="../post/add"> Crie seu post agora! </a>
+            </div>
+
+            <div th:each="post:${posts}" class="post-main">
+                <div class="user">
+                    <p class="user-handle"> @oTestador </p>
+                    <p class="user-name"> Testador </p>
+                </div>
+                <div class="post-content">
+                    <p th:text="${post.texto}"></p>
+                </div>
+            </div>
     </main>
-    </div>
 </body>
 </html>

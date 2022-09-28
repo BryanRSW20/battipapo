@@ -330,6 +330,14 @@ background: var(--primary-color);
 .user-add input:invalid{
   border-color: #b60707;
 }
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: row;
+}
+
 /* Registro de usuário */
 
 .alerta-sucesso{

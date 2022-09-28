@@ -1,12 +1,40 @@
 @charset "UTF-8";
 /* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 /* Fim dos Imports */
 /* Variáveis */
+:root{
+  --bg-ligth: rgb(243, 233, 233);
+  --primary-color: #3ABEFF;
+}
 /* Fim das Variáveis */
 /* Mixins */
 /* Fim dos Mixins */
+
+/* Animações */
+@keyframes fade-in{
+  from{
+    opacity: 0%;
+  }
+
+  to{
+    opacity: 100%;
+  }
+}
+
+@keyframes loading-anim {
+  from{
+    margin-left: -320px;
+  }
+  to{
+    margin-left: 320px;
+  }
+}
+/* Fim das Animações */
+
+/* CSS Universal */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +42,7 @@
 }
 
 body {
-  background-color: #071E22;
+  background-color: var(--bg-ligth);
   font-family: "Source Sans Pro";
 }
 
@@ -22,15 +50,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #3ABEFF;
+  color: var(--primary-color);
+  padding: 16px 10px;
   text-align: center;
-  padding: 30px;
-  box-shadow: 0 0 0.5em #DCE2C8;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, .350  );
 }
+
 .header-title {
   text-align: left;
   font-size: 1.5rem;
-  font-family: "Josefin Sans";
+  font-family: "Libre Baskerville";
   flex-grow: 1;
 }
 .header-menu ul {
@@ -41,9 +70,9 @@ body {
 }
 .header-menu ul li a {
   position: relative;
-  padding: 0.5rem;
+  padding: 1.5rem 0.5rem;
   text-decoration: none;
-  color: #3ABEFF;
+  color: var(--primary-color);
 }
 .header-menu ul li a::after {
   content: "";
@@ -78,6 +107,86 @@ body {
   transform-origin: center;
   -webkit-transform-origin: center;
 }
+
+
+/* CSS Universal */
+
+/* CSS Index/Pág. Captura */
+.capture{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: column;
+  margin-top: 2%;
+  color: var(--primary-color);
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.capture h3{
+  font-size: 2.5rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .350);
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.capture h5{
+  font-size: 1.50rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .350);
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.cp{
+  text-align: center;
+  width: 30%;
+  margin: 10% 2%;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.cp i{
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.cp h3{
+  color: var(--primary-color);
+}
+
+.capture-bottom{
+  color: var(--primary-color);
+  text-align: center;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.capture-bottom button{
+  margin-top: 2%;
+  background-color: rgba(148, 148, 148, 0.75);
+  padding: .75rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.capture-bottom button:hover{
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 0 .3rem var(--primary-color);
+}
+
+.cp-row{
+  display: flex;
+  flex-direction: row;
+}
+
+/* CSS Index/Pág. Captura */
+
 
 form {
   text-align: center;
@@ -139,50 +248,113 @@ main{
   font-weight: 400;
 }
 
+/* Registro de usuário */
+
 .user-add{
+  margin-top: 8%;
   display: flex;
   align-items: center;
   place-items: center;
   flex-direction: column;
-  background: #242424;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.user-add h1{
+  color: var(--primary-color);
+  margin-bottom: 2%;
+}
+
+.user-add button{
+  margin-top: 2%;
+  background-color: rgba(148, 148, 148, 0.75);
+  padding: .75rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .5s;
+}
+.user-add button:hover{
+background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 0 .3rem var(--primary-color);
+}
+
+.user-add label{
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.user-add-row{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: column;
+}
+
+.user-add-answer{
+  display: flex;
+  align-items: center;
+  place-items: center;
+  flex-direction: column;
+  margin: 1% 0;
+}
+
+.user-add hr{
+  border: 1px solid rgb(209, 208, 208);
+  width: 30%;
+  margin-bottom: 2%;
 }
 
 .user-add input{
   position: relative;
   background: transparent;
   outline: none;
-  border: 1px solid rgb(75, 75, 75);
+  border: 1px solid rgb(155, 155, 155);
   padding: .6rem;
-  border-radius: .2rem;
+  border-radius: 1rem;
+  transition: all .5s;
 }
+
+.user-add input:focus{
+  border-color: var(--primary-color);
+}
+
+.user-add input:valid{
+  border-color: var(--primary-color);
+}
+
+.user-add input:invalid{
+  border-color: #b60707;
+}
+/* Registro de usuário */
 
 .alerta-sucesso{
   display: flex;
-  background-color: #0051ff33;
-  color: #DCE2C8;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+  color: #fff;
   justify-content: center;
   place-items: center;
   text-align: center;
-  height: 4rem;
+  height: 9rem;
+  width: 30%;
+  border-radius: 3rem;
   flex-direction: column;
+  animation-name: fade-in;
+  animation-duration: 1s;
 }
 
 .link-error i{
-  color: #3ABEFF;
+  color: var(--primary-color);
   font-size: 9rem;
 }
 
-@keyframes loading-anim {
-  from{
-    margin-left: -320px;
-  }
-  to{
-    margin-left: 320px;
-  }
-}
-
 .loading-ball{
-  background: #3ABEFF;
+  background: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -260,7 +432,7 @@ main{
 }
 
 .btn-search:hover{
-  color: #3ABEFF;
+  color: var(--primary-color);
 }
 
 .post-create{
@@ -289,7 +461,7 @@ main{
 }
 
 .post-btn:hover{
-  background: #3ABEFF;
+  background: var(--primary-color);
 }
 
 .post-inp{
@@ -306,6 +478,6 @@ main{
 }
 
 .post-inp:focus{
-  border: 2px solid #3ABEFF;
+  border: 2px solid var(--primary-color);
 }
 /*# sourceMappingURL=style.css.map */

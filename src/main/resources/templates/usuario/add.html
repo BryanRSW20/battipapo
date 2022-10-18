@@ -15,6 +15,7 @@
     </div>
     <div class="header-menu">
         <ul>
+            <li><button id="theme-toggle" onclick="darkmode()"> <i class="fa fa-moon"></i> </button></li>
             <li><a class="link" href="../"> <i class="fa fa-home"></i> Home</a></li>
             <li><a class="link" href="../search"> <i class="fa fa-search"></i> Explorar </a></li>
             <li><a class="link" href="./add"> <i class="fa fa-user"></i> Meu Perfil </a></li>
@@ -53,7 +54,8 @@
 <div class="user-add-row">
     <div class="user-add-answer">
         <label for="iID"> Idade </label>
-        <input id="iID" th:field="*{idade}" type="number" placeholder=" " required>
+        <input id="iID" th:field="*{idade}" type="number" placeholder=" " min="16" required>
+        <span id="idAlert"></span>
         </div>
     <div class="user-add-answer">
 <label for="iE"> Email </label>
@@ -71,4 +73,5 @@
 <button type="submit" class="btn">Cadastrar</button>
 </form>
 </body>
+<script src="../js/index.js"></script>
 </html>

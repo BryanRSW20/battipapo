@@ -1,32 +1,35 @@
-function darkmode(){
-    const element = document.body;
+// Função Alternar Light/Dark Mode
 
-if(localStorage.getItem("data-theme")){
-    element.setAttribute("data-theme", localStorage.getItem("data-theme"));
-    darkmode(1);
+var toggle = document.getElementById("theme-toggle");
+
+var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+if (storedTheme)
+    document.documentElement.setAttribute('data-theme', storedTheme)
+
+
+toggle.onclick = function() {
+    var currentTheme = document.documentElement.getAttribute("data-theme");
+    var targetTheme = "light";
+
+    if (currentTheme === "light") {
+        targetTheme = "dark";
+    }
+
+    document.documentElement.setAttribute('data-theme', targetTheme)
+    localStorage.setItem('theme', targetTheme);
+};
+
+// Verificações Front-End Form Registro
+
+var userAge = document.getElementById('iID').value;
+
+
+if(userAge < 16){
+    console.log("Menó");
+    document.getElementById('outputAge').textContent("Sua idade está abaixo do aceitável pelos Termos de Uso.")   
 }
 
-function darkmode(r) {
-    const dataTheme = element.getAttribute("data-theme");
-    let trocaTema;
-    if(dataTheme === "claro"){
-        trocaTema = 1
-    } 
-    else {
-        trocaTema = 0
-    }
+else{
+    console.log("Maió");
     
-    if (trocaTema) {
-        element.setAttribute("data-theme", "escuro");
-        localStorage.setItem("data-theme", "escuro");
-    }
-    else{
-        element.setAttribute("data-theme", "claro");
-        localStorage.setItem("data-theme", "claro");
-    }
-}
-
-// element.classList.toggle("dark-mode");
-
-
 }

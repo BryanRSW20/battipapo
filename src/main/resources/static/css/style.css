@@ -30,18 +30,22 @@
 
 /* Temas */
 
-[data-theme="claro"]{
+html[data-theme='light']{
   --bg-color: #fff;
   --cor-primaria: #3ABEFF;
   --cor-padrao: #000;
   --cor-btn-d: #9b9b9b;
 }
 
-[data-theme="escuro"]{
-  --bg-color: rgb(29, 29, 29);
+html[data-theme='dark']{
+  --bg-color: #272727;
   --cor-primaria: #3ABEFF;
   --cor-padrao: #fff;
   --cor-btn-d: #9b9b9b;
+}
+
+body{
+  transition: all .5s;
 }
 
 /* CSS Universal */
@@ -52,7 +56,7 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background: var(--bg-color)!important;
   font-family: "Source Sans Pro";
 }
 
@@ -141,6 +145,27 @@ body {
   -webkit-transform-origin: center;
 }
 
+::selection{
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: .7rem;
+}
+
+::-webkit-scrollbar-track{
+  background: var(--cor-btn-d);
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(192, 192, 192);
+  transition: all .4s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: var(--cor-primaria);
+}
 
 /* CSS Universal */
 
@@ -179,19 +204,28 @@ body {
   margin: 10% 1%;
   animation-name: fade-in;
   animation-duration: 1s;
-  color: var(--cor-primaria);
+  color: var(--cor-padrao);
 }
 
 .cp i{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   font-size: 3rem;
   color: var(--cor-primaria);
 }
 
 .cp h3{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   color: var(--cor-primaria);
 }
 
 .capture-bottom{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   color: var(--cor-primaria);
   text-align: center;
   animation-name: fade-in;
@@ -221,6 +255,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* CSS Index/Pág. Captura */

@@ -33,3 +33,13 @@ else{
     console.log("Maió");
     
 }
+
+function abreNav(){
+    document.getElementById("sideNav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function fechaNav(){
+    document.getElementById("sideNav").style.width = "0px";
+    document.getElementById("main").style.marginLeft = "0px";
+}

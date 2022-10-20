@@ -2,9 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Batti-Papo | Login</title>
 </head>
@@ -31,39 +30,18 @@
     <h4> A Operação Falhou... </h4>
     <label th:text="#{errorMsg}"></label>
   </div>
-<form class="user-add" th:action="@{/usuario/save}" method="POST" th:object="${usuario}">
-
-    <h1> Edite seu perfil </h1>
-
+<form class="user-add" th:action="@{/post/save}" method="POST" th:object="${post}">
+    <h1> Edite seu post </h1>
     <hr>
-
     <div class="user-add-row">
+        <input type="number" th:field="${post.id}" id="userId" style="visibility: hidden;">
         <div class="user-add-answer">
-<label for="iUN"> Nome de Usuário </label>
-
-<input type="number" th:field="${usuario.id}" id="userId" style="visibility: hidden;">
-
-<input id="iUN" th:field="${usuario.username}" type="text" placeholder=" " required minlength="3" maxlength="16">
-</div>
-<div class="user-add-answer">
-<label for="iN"> Nome </label>
-<input id="iN" th:field="${usuario.nome}" type="text" placeholder=" " required>
-</div>
-<div class="user-add-answer">
-<label for="iSN"> Sobrenome </label>
-<input id="iSN" th:field="${usuario.sobrenome}" type="text" placeholder=" " required>
-</div>
-</div>
-<div class="user-add-row">
-    <div class="user-add-answer">
-        <label for="iID"> Idade </label>
-        <input id="iID" th:field="${usuario.idade}" type="number" placeholder=" " required>
+<label for="iUN"> Aqui está seu post, corrija aquele erro de português ou aquele mal-entendido abaixo </label>
         </div>
-    <div class="user-add-answer">
-<label for="iE"> Email </label>
-<input  id="iE" th:field="${usuario.email}" type="email" placeholder=" " required>
-</div>    
-</div>                 
+        <div class="user-add-answer">
+<input id="iUN" th:field="${post.texto}" type="text" placeholder=" " >
+    </div>
+</div>             
 <button type="submit" class="btn"> <i class="fa fa-floppy"></i> Salvar Edições</button>
 </form>
 </body>

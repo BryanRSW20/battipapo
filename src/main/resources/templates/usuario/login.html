@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/index.js" defer></script>
+    <title>Batti-Papo | Login</title>
+</head>
+<body class="cap-page">
+<header class="header">
+    <div class="header-title">
+        <a class="logo"> Undefined </a>
+    </div>
+    <div class="header-menu">
+        <ul>
+            <li><button id="theme-toggle" onclick="darkmode()"> <i class="fa fa-moon"></i> </button></li>
+            <li><a class="link" href="../"> <i class="fa fa-home"></i> Home</a></li>
+            <li><a class="link" href="../search"> <i class="fa fa-search"></i> Explorar </a></li>
+            <li><a class="link" href="./add"> <i class="fa fa-user"></i> Meu Perfil </a></li>
+        </ul>
+    </div>
+</header>
+
+<div th:if="${param.error}" class="alerta-sucesso">
+    <h4> Nome de Usuário ou Senha inválidos </h4> <i class="fa fa-check-square"></i> 
+  </div>
+
+  <div th:if="${param.logout}" class="alerta-falha">
+    <h4> Você se desconectou! </h4>
+  </div>
+<form class="user-add" th:action="@{/usuario/login}" method="POST" >
+<input type="text" placeholder="Nome de Usuário" name="username">
+<input type="password" placeholder="Senha" name="password">
+<button type="submit" class="btn">Cadastrar</button>
+</form>
+<footer class="footer">
+    <a href="../" class="logo"> Undefined </a> <br>
+    <p>&copy; 2022.</p>
+</footer>
+</body>
+<script src="../js/index.js"></script>
+</html>

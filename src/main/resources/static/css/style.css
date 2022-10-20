@@ -66,9 +66,6 @@ body {
 }
 
 .footer{
-  /* position: fixed;
-  bottom: 0;
-  left: 0; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -89,25 +86,97 @@ body {
   box-shadow: 0 0 0.5em rgba(0, 0, 0, .350);
 }
 
-.header button{
+.header-menu button{
   background: none;
   border: none;
   color: rgb(155, 155, 155);
   transition: all .5s;
 }
 
-.header button:hover{
+.header-menu button:hover{
   color: var(--cor-primaria);
   cursor: pointer;
 }
 
 .logo{
+  margin: 0 1.5rem;
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--cor-primaria);
 }
 
 /* Nav Link */
+
+
+/* Customizações Seleção e Scrollbar */
+
+::selection{
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+::-webkit-scrollbar{
+  width: .7rem;
+}
+
+::-webkit-scrollbar-track{
+  background: var(--cor-btn-d);
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(192, 192, 192);
+  transition: all .4s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: var(--cor-primaria);
+}
+
+/* Sidenav */
+
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color); 
+  overflow-x: hidden; 
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.sidenav .btn-fecha {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: var(--cor-btn-d);
+  cursor: pointer;
+}
+
+.sidenav .btn-fecha:hover {
+  color: var(--cor-primaria);
+
+}
+
+.abre-btn{
+  background-color: var(--bg-color);
+  border-bottom-right-radius: 16px;
+}
+
+.abre-btn i{
+  margin-top: 6px;
+  color: var(--cor-btn-d);
+}
 
 .header-title {
   text-align: left;
@@ -120,7 +189,8 @@ body {
   list-style: none;
 }
 .header-menu ul li {
-  display: inline;
+  /* display: inline; */
+  margin:  2rem;
 }
 .header-menu ul li a {
   position: relative;
@@ -162,28 +232,9 @@ body {
   -webkit-transform-origin: center;
 }
 
-/* Customizações Seleção e Scrollbar */
 
-::selection{
-  background-color: var(--cor-primaria);
-  color: #fff;
-}
-
-::-webkit-scrollbar{
-  width: .7rem;
-}
-
-::-webkit-scrollbar-track{
-  background: var(--cor-btn-d);
-}
-
-::-webkit-scrollbar-thumb{
-  background: rgb(192, 192, 192);
-  transition: all .4s;
-}
-
-::-webkit-scrollbar-thumb:hover{
-  background: var(--cor-primaria);
+.header-menu-low{
+  margin-top: 12rem;
 }
 
 /* CSS Index/Pág. Captura */
@@ -610,7 +661,7 @@ background: var(--cor-primaria);
 
 /* CSS SideNav */
 .sidenav{
-  height: 250px; 
+  height: 100%; 
   width: 0; 
   position: fixed; 
   z-index: 1; 

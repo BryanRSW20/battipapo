@@ -21,6 +21,11 @@ public class UsuarioController {
     return "usuario/list";
 }
 
+//    @GetMapping("/usuario/login")
+//    public String login(){
+//    return "login";
+//    }
+
 @GetMapping("/usuario/add")
     public String add(Model model){
     model.addAttribute("usuario", new Usuario());

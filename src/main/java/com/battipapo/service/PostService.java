@@ -11,4 +11,6 @@ public interface PostService {
     public Post findById(Long id);
 
     public Post save(Post post);
+
+    void deleteById(Long id);
 }

@@ -33,5 +33,14 @@ public class PostServiceImpl implements PostService {
         }
     }
 
+    @Override
+    public void deleteById(Long id){
+        try{
+            postRepository.deleteById(id);
+        } catch (Exception e){
+            throw e;
+        }
+    }
+
 
 }

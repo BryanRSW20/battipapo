@@ -26,6 +26,15 @@
 }
 /* Fim das Animações */
 
+/* Media Queries */
+
+@media screen and(max-width: 520px){
+
+  .cp{
+    width: 100%;
+  }
+}
+
 /* Temas */
 
 html{
@@ -145,6 +154,7 @@ body {
   overflow-x: hidden; 
   padding-top: 60px;
   transition: 0.5s;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .350);
 }
 
 #main {
@@ -171,11 +181,17 @@ body {
 .abre-btn{
   background-color: var(--bg-color);
   border-bottom-right-radius: 16px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .350);
 }
 
 .abre-btn i{
   margin-top: 6px;
   color: var(--cor-btn-d);
+  transition: all .5s;
+}
+
+.abre-btn:hover i{
+  color: var(--cor-primaria);
 }
 
 .header-title {
@@ -264,12 +280,12 @@ body {
 .cp{
   display: flex;
   flex-direction: column;
-  flex-wrap: row wrap;
+  flex-wrap: wrap;
   text-align: center;
   align-items: center;
   justify-content: center;
-  min-width: 30%;
-  max-width: 30%;
+  flex: 25%;
+  width: 33%;
   margin: 1% 1%;
   height: 24rem;
   border-radius: 1rem;
@@ -331,12 +347,10 @@ body {
 
 .cp-row{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: fit-content;
-  width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /* CSS Index/Pág. Captura */
@@ -574,11 +588,11 @@ background: var(--cor-primaria);
   }
 }
 
-.search input{
-  color: #fff;
-  background: #242424;
-  border-radius: 3rem;
-  border: none;
+.search-top input{
+  color: #242424;
+  background: transparent;
+  /* border-radius: 3rem; */
+  border: solid 1px #242424;
   outline: none;
   height: 2.5rem;
   width: 16rem;
@@ -597,17 +611,33 @@ background: var(--cor-primaria);
   background: #242424;
   padding: .8rem;
   color: rgba(74, 75, 74, 0.664);
+  cursor: pointer;
   border: none;
-  border-radius: 50%;
-  margin-left: 2.5%;
-  transition: all .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  /* border-radius: 50%; */
+  /* margin-left: 2.5%; */
+  transition: all .5s;
 }
 
 .search-result{
+  justify-content: center;
+  align-items: center;
   margin-top: 2%;
   width: 720px;
   height: 360px;
   border-radius: 1.5rem;
+  box-shadow: 0 0 .2rem rgba(0, 0, 0, .350);
+}
+
+.search-result ul{
+  list-style-type: none;
+}
+
+.search-result a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: var(--cor-padrao);
+  font-size: 1.2rem;
 }
 
 .btn-search:hover{

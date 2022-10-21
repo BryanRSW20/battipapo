@@ -33,6 +33,14 @@ public class UsuarioServiceImpl implements  UsuarioService {
         }
     }
 
+    @Override
+    public void deleteById(Long id){
+        try{
+        usuarioRepository.deleteById(id);
+        } catch (Exception e){
+            throw e;
+        }
+    }
 
 }
 

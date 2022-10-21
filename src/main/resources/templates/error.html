@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Batti-Papo | Login</title>
+    <title> Home | Batti-Papo</title>
 </head>
 <body>
     <div id="sideNav" class="sidenav">
@@ -31,32 +31,18 @@
     </div>
 
     <a class="abre-btn" onclick="abreNav()"> <i class="fa fa-bars"></i>  </a>
-
-<main id="main">
-
-<div th:if="${isSaved}" class="alerta-sucesso">
-    <h4> Alterações salvas</h4> <i class="fa fa-check-square"></i> 
-  </div>
-
-  <div th:if="${isError}" class="alerta-falha">
-    <h4> A Operação Falhou... </h4>
-    <label th:text="#{errorMsg}"></label>
-  </div>
-<form class="user-add" th:action="@{/post/save}" method="POST" th:object="${post}">
-    <h1> Edite seu post </h1>
-    <hr>
-    <div class="user-add-row">
-        <input type="number" th:field="${post.id}" id="userId" style="visibility: hidden;">
-        <div class="user-add-answer">
-<label for="iUN"> Aqui está seu post, corrija aquele erro de português ou aquele mal-entendido abaixo </label>
-        </div>
-        <div class="user-add-answer">
-<input id="iUN" th:field="${post.texto}" type="text" placeholder=" " >
+    <main>
+    <div class="link-error">
+           <h1> Algo deu errado... </h1>
+            <i class="fa fa-exclamation-triangle"></i>
+            <p>"O erro não é meu, é de vocês!"</p>
+            <p>- Paulo Battistella</p>
+            <p> Verifique se a URL existe, ou se você está conectado a internet </p>
+            <div class="loading-ball"></div>
+            <p> Olhe para a bolinha, e talvez o problema vá embora </p>
+            <p> Ou recarregue a página utilizando F5 </p>
+    </main>
     </div>
-</div>             
-<button type="submit" class="btn"> <i class="fa fa-floppy"></i> Salvar Edições</button>
-</form>
-</main>
 </body>
 <script src="../js/index.js"></script>
 </html>

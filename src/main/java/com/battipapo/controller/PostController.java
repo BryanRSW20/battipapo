@@ -48,4 +48,14 @@ public class PostController {
         }
     }
 
+    @GetMapping("/post/delete/{id}")
+    public String delete(@PathVariable long id) {
+        try {
+            postService.deleteById(id);
+        } catch (Exception e) {
+            System.out.println("Deu esse B.O. Aqui ó: " + e.getMessage());
+        }
+        return "redirect:/post/list";
+    }
+
 }

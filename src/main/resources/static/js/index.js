@@ -19,18 +19,31 @@ toggle.onclick = function() {
     localStorage.setItem('theme', targetTheme);
 };
 
-// Verificações Front-End Form Registro
+// Float Label - Verificação Is Valid
 
-var userAge = document.getElementById('iID').value;
+const inputs = document.querySelectorAll("input");
+ 
+inputs.forEach((input) => {
+  input.addEventListener("blur", (event) => {
+    if (event.target.value) {
+      input.classList.add("is-valid");
+    } else {
+      input.classList.remove("is-valid");
+    }
+  });
+});
 
+// Verificação Confirmar Senha
 
-if(userAge < 16){
-    console.log("Menó");
-    document.getElementById('outputAge').textContent("Sua idade está abaixo do aceitável pelos Termos de Uso.")   
+var senha = document.getElementById("senha");
+var confirmarSenha = document.getElementById("confirmar-senha");
+
+if(senha == confirmarSenha){
+    console.log("Tá serto");
 }
 
 else{
-    console.log("Maió");
+    console.log("Tá erradun");
     
 }
 

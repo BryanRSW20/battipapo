@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <a class="abre-btn" onclick="abreNav()"> <i class="fa fa-bars"></i>  </a>
+    <a class="abre-btn" onclick="abreNav()"> &lt; / &gt; Syntax <i class="fa fa-bars"></i>  </a>
 
 <div th:if="${isSaved}" class="alerta-sucesso">
     <h4> Cadastro realizado, bem-vindo ao Batti-Papo </h4> <i class="fa fa-check-square"></i> 
@@ -41,7 +41,7 @@
     <h4> A Operação Falhou... </h4>
     <label th:text="#{errorMsg}"></label>
   </div>
-<form class="user-add" th:action="@{/usuario/save}" method="POST" th:object="${usuario}">
+<form id="form" class="user-add" th:action="@{/usuario/save}" method="POST" th:object="${usuario}">
 
     <h1> Vem pra Syntax &lt; / &gt; você também!  </h1>
 
@@ -80,12 +80,13 @@
     <div class="container-input">
         <input type="password" name="confirma-senha" id="confirma-senha" minlength="8" required>
         <label for="confirma-senha"> Confirme a Senha </label>
+        <p id="outputSenha"></p>
     </div>
                
-<button type="submit" class="btn">Cadastrar</button>
+<button type="submit" onclick="confirmaSenha()"  class="btn">Cadastrar</button>
 </form>
 <footer class="footer">
-    <a href="../" class="logo"> Batti-Papo </a> <br>
+    <a href="../" class="logo">&lt; / &gt; Syntax </a> <br>
     <p>&copy; 2022.</p>
 </footer>
 </body>

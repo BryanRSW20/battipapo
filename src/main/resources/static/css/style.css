@@ -140,12 +140,13 @@ label {
 input {
   width: 100%;
   height: 80%;
-  border-radius: 4px;
+  /* border-radius: 4px; */
+  border: none;
+  border-bottom: 2px solid transparent;
   box-sizing: border-box;
   outline: none;
   background: transparent;
   caret-color: var(--cor-primaria);
-  border: 1px solid transparent;
   color: var(--cor-padrao);
   transition: border 500ms;
   padding: 20px 16px 6px;
@@ -155,6 +156,13 @@ input {
 input:focus + label,
 input.is-valid + label {
   transform: translateY(-100%) scale(0.75);
+}
+
+/* Coisas Secretas */
+
+#outputSenha{
+  color: #ff000f;
+  transition: ease-in .5s;
 }
 
 /* Float Label */
@@ -247,10 +255,11 @@ input.is-valid + label {
   background-color: var(--bg-color);
   border-bottom-right-radius: 16px;
   box-shadow: 0 0 1rem rgba(0, 0, 0, .350);
+
 }
 
 .abre-btn i{
-  margin-top: 6px;
+  margin-top: 8px;
   color: var(--cor-btn-d);
   transition: all .5s;
 }
@@ -420,11 +429,11 @@ input.is-valid + label {
 
 /* CSS Index/Pág. Captura */
 
-.cap-page{
-  background-image: url(../img/rm378-02c.jpg)!important;
+/* .cap-page{
+  /* background-image: url(../img/rm378-02c.jpg)!important; 
   backdrop-filter: blur(4px);
   background-repeat: no-repeat;
-}
+} */
 
 
 form {
@@ -493,6 +502,7 @@ main{
 .user-add{
   margin:  0 auto;
   margin-top: 1%;
+  margin-bottom: 1%;
   height: fit-content;
   background: var(--bg-color);
   width: fit-content;
@@ -504,6 +514,8 @@ main{
   flex-direction: column;
   animation-name: fade-in;
   animation-duration: 1s;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .350);
 }
 
 .user-add h1{
@@ -777,7 +789,7 @@ background: var(--cor-primaria);
 .abre-btn{
 font-size: 20px;
 cursor: pointer;
-color: #242424;
+color: var(--cor-primaria);
 padding: 10px 15px;
 border: none;
 }

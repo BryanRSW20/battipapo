@@ -35,18 +35,24 @@ inputs.forEach((input) => {
 
 // Verificação Confirmar Senha
 
-var senha = document.getElementById("senha");
-var confirmarSenha = document.getElementById("confirmar-senha");
+function confirmaSenha(){
 
-if(senha == confirmarSenha){
-    console.log("Tá serto");
+var senha = document.getElementById("senha").value;
+var confirmarSenha = document.getElementById("confirma-senha").value;
+var outputSenha = document.getElementById("outputSenha");
+var formulario = document.getElementById("form")
+
+// Comparação das senhas
+if(senha === confirmarSenha){
+    console.log("As senhas são iguais!");
 }
-
 else{
-    console.log("Tá erradun");
-    
+    outputSenha.innerHTML = "Você digitou senhas diferentes"
+    //Caso as senhas não sejam iguais, o formulário é resetado
+    formulario.reset();
 }
 
+}
 // Sidenav
 
 function abreNav(){
@@ -65,7 +71,7 @@ function pesquisa(){
     var input, filtro, ul, li, a, i;
 
     input = document.getElementById("pesquisa");
-    filter = input.value.toUpperCase();
+    filtro = input.value.toUpperCase();
     ul = document.getElementById("menuPesquisa");
     li = document.getElementsByTagName("li");
 

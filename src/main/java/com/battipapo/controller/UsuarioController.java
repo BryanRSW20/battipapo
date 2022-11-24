@@ -15,17 +15,6 @@ public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
-    @GetMapping("/usuario/search")
-    public String findAll(Model model) {
-        model.addAttribute("sa-battipapo", usuarioService.findAll());
-        return "usuario/search";
-    }
-
-//    @GetMapping("/usuario/login")
-//    public String login(){
-//    return "login";
-//    }
-
     @GetMapping("/usuario/add")
     public String add(Model model) {
         model.addAttribute("usuario", new Usuario());

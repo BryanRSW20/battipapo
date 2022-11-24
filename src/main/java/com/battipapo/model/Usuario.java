@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column(name = "username")
     @Size(max = 16)
@@ -39,11 +39,11 @@ public class Usuario {
     private String senha;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        id = id;
     }
 
     public String getUsername() {
@@ -97,7 +97,7 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", username='" + username + '\'' +
                 ", nome='" + nome + '\'' +
                 ", sobrenome='" + sobrenome + '\'' +

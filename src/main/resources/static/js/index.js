@@ -57,31 +57,71 @@ else{
 
 function abreNav(){
     document.getElementById("sideNav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    // document.getElementById("main").style.marginLeft = "250px";
 }
 
 function fechaNav(){
     document.getElementById("sideNav").style.width = "0px";
-    document.getElementById("main").style.marginLeft = "0px";
+    // document.getElementById("main").style.marginLeft = "0px";
 }
 
 // Função de pesquisa
 
-function pesquisa(){
-    var input, filtro, ul, li, a, i;
+// function pesquisa(){
+//     var input, filtro, ul, li, a, i;
 
-    input = document.getElementById("pesquisa");
-    filtro = input.value.toUpperCase();
-    ul = document.getElementById("menuPesquisa");
-    li = document.getElementsByTagName("li");
+//     input = document.getElementById("pesquisa");
+//     filtro = input.value.toUpperCase();
+//     ul = document.getElementById("menuPesquisa");
+//     li = document.getElementsByTagName("li");
 
-    for(i = 0; i < li.length; i++){
-        a = li[i].getElementsByTagName("a")[0];
+//     for(i = 0; i < li.length; i++){
+//         a = li[i].getElementsByTagName("a")[0];
 
-        if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else{
-            li[i].style.display = "none";
-        }
+//         if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//             li[i].style.display = "";
+//         } else{
+//             li[i].style.display = "none";
+//         }
+//     }
+// }
+
+//Contador de Tags/Likes
+
+var interact = document.getElementById("interact");
+var tags = 0;
+var Clicou = false;
+
+function contador(){
+  if (!Clicou) {
+    tags += 1;
+    document.getElementById("output-tags").innerHTML = tags;
+    Clicou = true;
+
+    if (Clicou = true) {
+      interact.style.color = "#06BA63"
     }
+  }
 }
+
+//Limite e mínimo de idade
+
+var formulario = document.getElementById('form');
+var idade = document.getElementById('idade').value;
+
+console.log(idade);
+
+if (idade < 13) {
+  console.log('bah o cara é menor de idade');
+  formulario.reset();
+}
+
+else if (idade > 200) {
+  console.log('ah tá pô');
+  formulario.reset();
+}
+
+else {
+  console.log('já que é tu que tá dizendo');
+}
+        

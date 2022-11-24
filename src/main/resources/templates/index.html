@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{img/syntax-logo.png}" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title> Home | &lt/&gtSyntax</title>
@@ -11,21 +12,19 @@
     <div id="sideNav" class="sidenav">
         <a href="javascript:void(0)" class="btn-fecha" onclick="fechaNav()">&times;</a>
         <div class="header-title">
-            <a class="logo" href="../"> Olá, Usuário! </a>
+            <a class="logo" href="../"> &lt/&gtSyntax </a>
         </div>
         <div class="header-menu">
             <ul>
                 <li><a href="/"> <i class="fa fa-home"></i> Home</a></li>
-                <li><a href="usuario/search"> <i class="fa fa-search"></i> Explorar </a></li>
                 <li><a href="/post/list"> <i class="fa fa-rss"></i> Feed </a></li>
                 <li><a href="#"> <i class="fa fa-user"></i> Meu Perfil </a></li>
-                <li><a id="theme-toggle" onclick="darkmode()"> <i class="fa fa-moon"></i>  Alterar Tema </a></li>
+                <li><a id="theme-toggle" onclick="darkmode()"> <i class="fa fa-regular fa-lightbulb"></i>  Alterar Tema </a></li>
             </ul>
 
         <div class="header-menu-low">
-            <ul>
-                <li><a th:href="@{/logout}"> <i class="fa fa-sign-out"></i> Desconectar </a></li>
-            </ul>
+                <span> Syntax, feita por <span class="highlight"> desenvolvedores </span> , para <span class="highlight"> desenvolvedores. </span> </span> <br>
+                <a href=""></a><i> </i>
         </div>
         </div>
     </div>
@@ -33,15 +32,13 @@
     <a class="abre-btn" onclick="abreNav()"> &lt; / &gt; Syntax <i class="fa fa-bars"></i>  </a>
 
     <main id="main">
-
+        
+        
         <header class="capture">
             <h3> Bem-vindo à &lt/&gtSyntax</h3> <br>
-            <h5> Já nos conhece? </h5>
-            <p> Se sim, </p> <a href="usuario/login"> Entre agora </a> </p> <br>
-            <p> Se não,</p> <h5> Conheça a Syntax!</h5>
+            <span> A rede feita por  <span class="highlight"> desenvolvedores </span>,
+             para <span class="highlight"> desenvolvedores </span> </span>
         </header>
-
-        <h3> </h3>
         <div class="cp-row">
         <div class="cp">
             <i class="fa-brands fa-react"></i>
@@ -73,7 +70,8 @@
             <h3>Fique tranquilo!</h3>
             <p> Seus dados estão protegidos e o Ambiente da Syntax é monitorado. </p>
         </div>
-    </div>
+        </div>
+
     <div class="capture-bottom">
     <h3> Tá esperando o quê? <br> Acesse agora mesmo!</h3>
     <button onclick="window.location.href='/usuario/add'"> Registre-se agora! </button>

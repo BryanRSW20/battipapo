@@ -103,25 +103,4 @@ function contador(){
     }
   }
 }
-
-//Limite e mínimo de idade
-
-var formulario = document.getElementById('form');
-var idade = document.getElementById('idade').value;
-
-console.log(idade);
-
-if (idade < 13) {
-  console.log('bah o cara é menor de idade');
-  formulario.reset();
-}
-
-else if (idade > 200) {
-  console.log('ah tá pô');
-  formulario.reset();
-}
-
-else {
-  console.log('já que é tu que tá dizendo');
-}
-        
+   

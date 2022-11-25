@@ -76,6 +76,7 @@ body {
   transition: all .5s;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   animation-name: fade-in;
   animation-duration: .75s;
 }
@@ -231,7 +232,7 @@ input.is-valid + label {
   height: 100%; 
   width: 0; 
   position: fixed;
-  z-index: 1; 
+  z-index: 9999; 
   top: 0;
   left: 0;
   background-color: var(--bg-color); 
@@ -344,11 +345,9 @@ input.is-valid + label {
 }
 
  .cp-row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+  padding: 1rem 0;
+    display: grid;
+    gap: 1rem;
 } 
 
 .cp{
@@ -357,12 +356,8 @@ input.is-valid + label {
   text-align: center;
   align-items: center;
   justify-content: center;
-  max-width: 640px;
-  max-height: 480px;
-  min-height: 360px;
-  min-width: 480px;
-  flex: 25%;
-  margin: 1% 1%;
+  height: clamp(22.5rem, 33vw, 30rem);
+  width: clamp(rem, 31vw, 40rem);
   border-radius: 1rem;
   animation-name: fade-in;
   animation-duration: 1s;
@@ -416,7 +411,7 @@ span.highlight {
   animation-duration: 1s;
 }
 
-.capture-bottom button{
+/* .capture-bottom button{
   width: 15%;
   margin-top: 1%;
   margin-bottom: 1%;
@@ -429,7 +424,7 @@ span.highlight {
   font-weight: 700;
   cursor: pointer;
   transition: all .5s;
-}
+} */
 
 .capture-bottom button:hover{
   background: var(--cor-primaria);
@@ -512,22 +507,26 @@ main{
 /* Registro de usuário */
 
 .user-add{
-  margin:  0 auto;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  height: fit-content;
+  /* margin-top: 1%; */
+  /* margin-bottom: 25%; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
   background: var(--bg-color);
   width: fit-content;
   padding: 4rem 2rem;
   display: flex;
+  z-index: 1;
   align-items: center;
   place-items: center;
   justify-content: center;
   flex-direction: column;
   animation-name: fade-in;
   animation-duration: 1s;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .350);
+  /* border-radius: 6px; */
+  /* border: 1px solid #000; */
+  box-shadow: 0 0 8px rgba(0, 0, 0, .27);
 }
 
 .user-add h1{
@@ -535,21 +534,26 @@ main{
   margin-bottom: 2%;
 }
 
-.user-add button{
+.btn{
   margin-top: 2%;
-  background-color: rgba(148, 148, 148, 0.75);
-  padding: .75rem 1rem;
-  border: none;
-  border-radius: 1rem;
+  background-color: transparent;
+  padding: .75rem 5rem;
+  border: 1px solid var(--cor-btn-d);
   text-transform: uppercase;
   font-family: "Source Sans Pro";
   font-weight: 700;
+  border-radius: 1rem;
+  color: var(--cor-btn-d);
   cursor: pointer;
   transition: all .5s;
 }
-.user-add button:hover{
-background: var(--cor-primaria);
+
+.btn:hover{
+  background: var(--cor-primaria);
+  padding: 1.25rem 6rem;
   color: #fff;
+  border: none;
+  border-radius: 0;
   box-shadow: 0 0 .3rem var(--cor-primaria);
 }
 
@@ -788,38 +792,37 @@ background: var(--cor-primaria);
   color: var(--cor-primaria);
 }
 
-.post-btn{
-  margin-top: 3%;
-  margin-bottom: 3%;
-  background-color: #363636;
-  border-radius: 8px;
-  border: none;
-  color: #fff;
+.post-write{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
   padding: 1rem;
-  transition: all .5s cubic-bezier(0.47, 0, 0.745, 0.715);
-  cursor: pointer;
-}
-
-.post-btn:hover{
-  background: var(--cor-primaria);
+  border-radius: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .350);
+  width: clamp(320px, 40vw, 860px);
+  height: clamp(320px, 30vh, 600px);
 }
 
 .post-inp{
   margin-top: 3%;
   background-color: #363636;
+  color: var(--cor-padrao);
   border: none;
+  width: 90%;
+  height: 90%;
+  font-size: 1.4rem;
+  font-style: 'Source Sans Pro';
   border-radius: 8px;
-  width: 80%;
-  height: 80%;
   outline: none;
   resize: none;
   font-size: 1rem;
-  transition: all .3s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .3s;
 }
 
-.post-inp:focus{
-  border: 2px solid var(--cor-primaria);
-}
+/* .post-inp:focus{
+  border: 1px solid var(--cor-primaria);
+} */
 
 /* CSS SideNav */
 .sidenav{
@@ -851,4 +854,79 @@ border: none;
 /* CSS SideNav */
 
 
-/*# sourceMappingURL=style.css.map */
+/* Fundo pág. Registro */
+.registration-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/bg-image.jpg");
+  /* background-size: 80%; */
+  background-repeat: no-repeat;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* background: #06BA63; */
+}
+
+.registration-background-text{
+  display: flex;
+  place-items: center;
+  text-align: center;
+  padding-top: 15rem;
+  padding-left: 50rem;
+  /* width: 80%; */
+}
+
+.registration-background-text h1{
+  color: #fff;
+  opacity: 40%;
+  font-size: clamp(1rem ,4.5vw, 4rem);
+}
+
+/*  Links Forms  */
+
+.useful-links{
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.useful-links span{
+  font-size: .9rem;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.post-write a,
+.useful-links a{
+  font-size: 1.2rem;
+color: var(--cor-primaria);
+cursor: pointer;
+}
+
+/* Media Queries */
+
+@media(max-width: 1200px){
+.registration-background{
+  display: none;
+}
+
+.user-add{
+  width: 100%;
+}
+
+}
+
+@media(min-width: 600px){
+  .cp-row{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 900px){
+  .cp-row{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

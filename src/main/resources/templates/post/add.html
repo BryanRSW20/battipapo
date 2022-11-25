@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" th:href="@{img/syntax-logo.png}" type="image/x-icon">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <script th:src="@{/js/index.js}" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title> Home | Batti-Papo</title>
+    <title>&lt/&gtSyntax | Crie um post</title>
 </head>
 <body>
     <div id="sideNav" class="sidenav">
         <a href="javascript:void(0)" class="btn-fecha" onclick="fechaNav()">&times;</a>
         <div class="header-title">
-            <a class="logo" href="../"> Olá, Usuário! </a>
+            <a class="logo" href="../"> &lt/&gt Syntax </a>
         </div>
         <div class="header-menu">
             <ul>
                 <li><a href="/"> <i class="fa fa-home"></i> Home</a></li>
-                <li><a href="/search"> <i class="fa fa-search"></i> Explorar </a></li>
                 <li><a href="/post/list"> <i class="fa fa-rss"></i> Feed </a></li>
-                <li><a href="#"> <i class="fa fa-user"></i> Meu Perfil </a></li>
+                <li><a href="/usuario/add"> <i class="fa fa-user"></i> Crie seu perfil </a></li>
                 <li><a id="theme-toggle" onclick="darkmode()"> <i class="fa fa-regular fa-lightbulb"></i>  Alterar Tema </a></li>
 
             </ul>
 
         <div class="header-menu-low">
             <ul>
-                <li><a th:href="@{/logout}"> <i class="fa fa-sign-out"></i> Desconectar </a></li>
+                <span> Syntax, feita por <span class="highlight"> desenvolvedores </span> , para <span class="highlight"> desenvolvedores. </span> </span> <br>
+                <a href=""></a><i> </i>
             </ul>
         </div>
         </div>
@@ -36,11 +37,10 @@
     <main id="main">
         
 
-            <form class="post-create" th:action="@{/post/save}" method="POST" th:object="${post}">
-            <label for="post-txt"> Escreva seu post </label>
+            <form class="post-write" th:action="@{/post/save}" method="POST" th:object="${post}">
             <textarea class="post-inp" th:field="*{texto}" id="post-txt" required></textarea>
-            <button class="post-btn" type="submit"> Enviar <i class="fa fa-paper-plane"></i> </button>
-            <button onclick="window.location.href='./list'" class="post-btn-c"> Ah, deixa pra lá <i class="fa fa-ban"></i> </button>
+            <button class="btn" type="submit"> Enviar <i class="fa fa-paper-plane"></i> </button>
+            <a href="./list" class="post-btn-c"> Ah, deixa pra lá <i class="fa fa-ban"></i> </a>
             </form>
     </main>
 </body>
